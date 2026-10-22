@@ -1,0 +1,153 @@
+
+/* ===== MOVIE DETAILS PAGE ===== */
+
+body:has(#movie-detail) {
+    margin: 0;
+    padding: 35px 6%;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top left, #35090e 0%, transparent 45%),
+        #080808;
+    color: #fff;
+    font-family: Inter, Arial, sans-serif;
+}
+
+/* Page Heading */
+body:has(#movie-detail) > h1 {
+    max-width: 1100px;
+    margin: 0 auto 35px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #292929;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+body:has(#movie-detail) > h1::first-letter {
+    color: #e50914;
+}
+
+/* Details Container */
+#movie-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+    gap: 35px;
+    align-items: start;
+    background: linear-gradient(145deg, #171717, #101010);
+    border: 1px solid #303030;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px #00000055;
+}
+
+/* Movie Poster */
+#movie-detail > div:first-child img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 470px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #383838;
+    box-shadow: 0 12px 30px #00000055;
+}
+
+/* Movie Title */
+#movie-detail h2 {
+    margin: 0 0 20px;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+/* Movie Information */
+#movie-detail section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+#movie-detail section p {
+    margin: 0;
+    padding: 8px 12px;
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.88rem;
+}
+
+/* Plot and Other Details */
+#movie-detail > div:nth-child(2) > div {
+    margin-top: 22px;
+}
+
+#movie-detail > div:nth-child(2) > div > p:first-child {
+    color: #ff3943;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#movie-detail p {
+    color: #bdbdbd;
+    line-height: 1.8;
+}
+
+/* IMDb Button */
+#movie-detail > button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#movie-detail > button a {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #e50914;
+    border-radius: 9px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+#movie-detail > button a:hover {
+    background: #ff2934;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px #e5091440;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    body:has(#movie-detail) {
+        padding: 22px 4%;
+    }
+
+    body:has(#movie-detail) > h1 {
+        margin-bottom: 22px;
+    }
+
+    #movie-detail {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 18px;
+    }
+
+    #movie-detail > div:first-child img {
+        width: min(100%, 300px);
+        max-height: 420px;
+        margin: 0 auto;
+    }
+
+    #movie-detail > button {
+        grid-column: 1;
+    }
+}
